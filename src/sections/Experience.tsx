@@ -7,6 +7,8 @@ export default function Experience() {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: '-100px' });
 
+  if (experienceData.length === 0) return null;
+
   return (
     <section id="experience" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={containerRef}>

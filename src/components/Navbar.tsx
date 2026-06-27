@@ -2,16 +2,18 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
+import { experienceData, projectsData, servicesData } from '../data/portfolioData';
+
 const navLinks = [
-  { name: 'Home', id: 'home' },
-  { name: 'About', id: 'about' },
-  { name: 'Skills', id: 'skills' },
-  { name: 'Experience', id: 'experience' },
-  { name: 'Projects', id: 'projects' },
-  { name: 'Services', id: 'services' },
-  { name: 'Achievements', id: 'achievements' },
-  { name: 'Contact', id: 'contact' },
-];
+  { name: 'Home', id: 'home', show: true },
+  { name: 'About', id: 'about', show: true },
+  { name: 'Skills', id: 'skills', show: true },
+  { name: 'Experience', id: 'experience', show: experienceData.length > 0 },
+  { name: 'Projects', id: 'projects', show: projectsData.length > 0 },
+  { name: 'Services', id: 'services', show: servicesData.length > 0 },
+  { name: 'Achievements', id: 'achievements', show: true },
+  { name: 'Contact', id: 'contact', show: true },
+].filter(link => link.show);
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
