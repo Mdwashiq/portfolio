@@ -81,6 +81,8 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
 export default function Services() {
   const ref = useRef(null);
 
+  if (servicesData.length === 0) return null;
+
   return (
     <section id="services" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>

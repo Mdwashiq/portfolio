@@ -9,6 +9,8 @@ export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  if (projectsData.length === 0) return null;
+
   const filteredProjects = projectsData.filter((project) => {
     if (activeCategory === 'All') return true;
     return project.category === activeCategory;

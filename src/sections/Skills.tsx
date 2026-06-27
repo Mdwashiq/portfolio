@@ -117,6 +117,8 @@ export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
+  if (skillCategories.length === 0) return null;
+
   return (
     <section id="skills" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>
