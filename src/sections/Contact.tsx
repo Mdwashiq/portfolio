@@ -40,12 +40,12 @@ export default function Contact() {
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       
-      // Fire premium confetti explosion
+      // Fire M-tricolor confetti explosion
       confetti({
         particleCount: 120,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ['#2563EB', '#7C3AED', '#06B6D4'],
+        colors: ['#0066b1', '#1c69d4', '#e22718', '#ffffff'],
       });
     } catch (err: any) {
       console.error(err);
@@ -55,18 +55,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-bg-dark/40">
-      {/* Background decoration blur */}
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
-
+    <section id="contact" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-left max-w-xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4 font-heading">
+        <div className="text-left max-w-xl mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-4 font-heading uppercase">
             GET IN TOUCH
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-m-blue-light via-m-blue-dark to-m-red" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -74,13 +71,11 @@ export default function Contact() {
           {/* Left Panel: Contact info & Socials */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-12 text-left">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-white font-heading leading-snug">
-                Let's build something <br />
-                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  extraordinary
-                </span> together.
+              <h3 className="text-2xl font-bold text-white font-heading leading-snug uppercase tracking-tight">
+                LET'S BUILD <br />
+                <span className="text-m-red">SOMETHING SIGNIFICANT</span> TOGETHER.
               </h3>
-              <p className="text-sm md:text-base text-white/50 font-body leading-relaxed">
+              <p className="text-xs md:text-sm text-body-text font-body font-light leading-relaxed">
                 Whether you need an autonomous robotic integration, a custom AI agent workflow, a modern SaaS application, or database consulting—I'm here to help turn your ideas into functional products.
               </p>
             </div>
@@ -88,24 +83,24 @@ export default function Contact() {
             {/* Direct Channels */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/5 text-accent">
+                <div className="p-3.5 bg-surface-soft border border-hairline text-m-red rounded-none">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-white/40">EMAIL ME</div>
-                  <a href="mailto:wahiqmohamed@gmail.com" className="text-sm font-bold text-white hover:text-accent transition-colors font-heading cursor-none">
+                  <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">EMAIL ADDRESS</div>
+                  <a href="mailto:wahiqmohamed@gmail.com" className="text-sm font-bold text-white hover:text-m-red transition-colors font-heading cursor-none uppercase tracking-tight">
                     wahiqmohamed@gmail.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="p-3.5 rounded-2xl bg-white/5 border border-white/5 text-primary">
+                <div className="p-3.5 bg-surface-soft border border-hairline text-m-blue-light rounded-none">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-mono text-white/40">LOCATION</div>
-                  <div className="text-sm font-bold text-white font-heading">
+                  <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">LOCATION</div>
+                  <div className="text-sm font-bold text-white font-heading uppercase tracking-tight">
                     Tamil Nadu, India
                   </div>
                 </div>
@@ -114,11 +109,13 @@ export default function Contact() {
 
             {/* Social channels */}
             <div className="space-y-4">
-              <div className="text-xs font-mono text-white/30">CONNECT WITH ME</div>
+              <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">CONNECT WITH ME</div>
               <div className="flex space-x-3">
                 <a
-                  href="#"
-                  className="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-white/70 hover:text-white transition-all cursor-none"
+                  href="https://www.linkedin.com/in/-washiq7"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3.5 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/70 hover:text-white transition-all cursor-none rounded-none"
                   aria-label="LinkedIn Profile"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -129,7 +126,7 @@ export default function Contact() {
                 </a>
                 <a
                   href="#"
-                  className="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-white/70 hover:text-white transition-all cursor-none"
+                  className="p-3.5 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/70 hover:text-white transition-all cursor-none rounded-none"
                   aria-label="GitHub Profile"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -141,16 +138,15 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Panel: Interactive Contact Form */}
+          {/* Right Panel: Spec Contact Form */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-3xl glassmorphism border border-white/5 p-8 md:p-10 shadow-2xl overflow-hidden">
+            <div className="relative bg-surface-soft border border-hairline rounded-none p-8 md:p-10 shadow-2xl overflow-hidden">
               
               <AnimatePresence mode="wait">
                 {status === 'success' ? (
-                  /* Success Overlay state */
                   <motion.div
                     key="success"
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0 }}
                     className="flex flex-col items-center justify-center text-center py-12 space-y-6"
@@ -159,29 +155,28 @@ export default function Contact() {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.1 }}
-                      className="p-4 rounded-full bg-accent/15 text-accent border border-accent/20"
+                      className="p-4 bg-black border border-m-red text-m-red rounded-none"
                     >
-                      <CheckCircle2 className="w-16 h-16" />
+                      <CheckCircle2 className="w-12 h-12" />
                     </motion.div>
                     
                     <div className="space-y-2">
-                      <h3 className="text-2xl font-bold text-white font-heading">
-                        Message Sent Successfully!
+                      <h3 className="text-xl font-bold text-white font-heading uppercase tracking-tight">
+                        MESSAGE SUBMITTED.
                       </h3>
-                      <p className="text-sm text-white/50 max-w-sm mx-auto font-body">
-                        Thank you for reaching out. I have received your request and will get back to you within 24 hours.
+                      <p className="text-xs text-body-text max-w-sm mx-auto font-body font-light leading-relaxed">
+                        Inquiry persisted successfully. System queue will process this telemetry profile. Expect direct feedback within 24 hours.
                       </p>
                     </div>
 
                     <button
                       onClick={() => setStatus('idle')}
-                      className="px-6 py-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-xs font-semibold text-white transition-all cursor-none"
+                      className="px-6 py-3 bg-black border border-white hover:bg-white hover:text-black text-xs font-bold tracking-widest uppercase transition-all cursor-none rounded-none"
                     >
-                      Send Another Message
+                      SEND ANOTHER TRANSMISSION
                     </button>
                   </motion.div>
                 ) : (
-                  /* Form View state */
                   <motion.form
                     key="form"
                     onSubmit={handleSubmit}
@@ -189,9 +184,8 @@ export default function Contact() {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                   >
-                    {/* Error Alerts */}
                     {status === 'error' && (
-                      <div className="p-4 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs flex items-center space-x-3.5">
+                      <div className="p-4 bg-black border border-m-red text-m-red text-xs flex items-center space-x-3.5 rounded-none font-mono">
                         <AlertCircle className="w-5 h-5 shrink-0" />
                         <span>{errorMessage}</span>
                       </div>
@@ -199,8 +193,8 @@ export default function Contact() {
 
                     {/* Name Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="name" className="text-xs font-mono text-white/40">
-                        FULL NAME <span className="text-rose-500">*</span>
+                      <label htmlFor="name" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
+                        FULL NAME <span className="text-m-red">*</span>
                       </label>
                       <input
                         type="text"
@@ -210,14 +204,14 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full px-5 py-3.5 rounded-2xl bg-white/5 border border-white/5 focus:border-accent focus:bg-white/10 text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body"
+                        className="w-full h-12 px-4 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
                     {/* Email Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="email" className="text-xs font-mono text-white/40">
-                        EMAIL ADDRESS <span className="text-rose-500">*</span>
+                      <label htmlFor="email" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
+                        EMAIL ADDRESS <span className="text-m-red">*</span>
                       </label>
                       <input
                         type="email"
@@ -227,13 +221,13 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="johndoe@example.com"
-                        className="w-full px-5 py-3.5 rounded-2xl bg-white/5 border border-white/5 focus:border-accent focus:bg-white/10 text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body"
+                        className="w-full h-12 px-4 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
                     {/* Subject Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="subject" className="text-xs font-mono text-white/40">
+                      <label htmlFor="subject" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
                         SUBJECT
                       </label>
                       <input
@@ -242,15 +236,15 @@ export default function Contact() {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        placeholder="Project Collaboration"
-                        className="w-full px-5 py-3.5 rounded-2xl bg-white/5 border border-white/5 focus:border-accent focus:bg-white/10 text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body"
+                        placeholder="System Collaboration"
+                        className="w-full h-12 px-4 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
-                    {/* Message Area */}
+                    {/* Message Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="message" className="text-xs font-mono text-white/40">
-                        YOUR MESSAGE <span className="text-rose-500">*</span>
+                      <label htmlFor="message" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
+                        TRANSMISSION FEEDBACK <span className="text-m-red">*</span>
                       </label>
                       <textarea
                         id="message"
@@ -259,8 +253,8 @@ export default function Contact() {
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell me about your project, goals, or requirements..."
-                        className="w-full px-5 py-3.5 rounded-2xl bg-white/5 border border-white/5 focus:border-accent focus:bg-white/10 text-sm text-white placeholder-white/20 outline-none transition-all resize-none cursor-none font-body"
+                        placeholder="Specify telemetry parameters, goals, or scheduling details..."
+                        className="w-full px-4 py-3 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all resize-none cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
@@ -268,17 +262,17 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={status === 'submitting'}
-                      className="w-full py-4 rounded-2xl bg-gradient-to-r from-primary to-accent hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] disabled:opacity-50 text-sm font-semibold text-white inline-flex items-center justify-center space-x-2 transition-all duration-300 cursor-none"
+                      className="bmw-btn-primary w-full py-4 tracking-[2px] cursor-none disabled:opacity-50"
                     >
                       {status === 'submitting' ? (
                         <>
-                          <div className="w-4 h-4 rounded-full border-2 border-t-transparent border-white animate-spin" />
-                          <span>SENDING INQUIRY...</span>
+                          <div className="w-4 h-4 rounded-none border border-t-transparent border-white animate-spin mr-2" />
+                          <span>TRANSMITTING...</span>
                         </>
                       ) : (
                         <>
-                          <Send className="w-4 h-4" />
-                          <span>SEND MESSAGE</span>
+                          <Send className="w-4 h-4 mr-2" />
+                          <span>SUBMIT TRANSMISSION</span>
                         </>
                       )}
                     </button>

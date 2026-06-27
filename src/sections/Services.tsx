@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { 
   BrainCircuit, Cpu, Code2, Layers, LayoutDashboard, 
-  Link2, Eye, HelpCircle, CheckCircle2 
+  Link2, Eye, HelpCircle 
 } from 'lucide-react';
 import { servicesData } from '../data/portfolioData';
 
@@ -35,33 +35,39 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      className="tech-card p-8 rounded-3xl glassmorphism border border-white/5 hover:border-white/15 transition-all duration-300 relative group flex flex-col justify-between shadow-xl"
+      transition={{ duration: 0.4, delay: index * 0.04 }}
+      className="p-8 bg-surface-soft border border-hairline rounded-none hover:border-white/20 transition-all duration-300 relative group flex flex-col justify-between shadow-xl"
     >
+      <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(150px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.4), transparent 50%)`
+        }}
+      />
+
       <div className="z-10 text-left">
-        {/* Glowing Icon Frame */}
-        <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 text-accent flex items-center justify-center group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300 mb-6">
-          <IconComponent className="w-6 h-6 text-accent" />
+        {/* Square Icon frame */}
+        <div className="w-12 h-12 bg-black border border-hairline text-m-red flex items-center justify-center group-hover:scale-105 transition-all duration-300 mb-6 rounded-none">
+          <IconComponent className="w-5 h-5 text-m-red" />
         </div>
 
-        {/* Title */}
-        <h3 className="text-xl font-bold text-white font-heading mb-3 group-hover:text-accent transition-colors">
+        {/* Title: uppercase, tight spacing */}
+        <h3 className="text-lg font-bold text-white font-heading mb-3 group-hover:text-m-red transition-colors uppercase tracking-tight">
           {service.title}
         </h3>
 
-        {/* Description */}
-        <p className="text-sm text-white/50 font-body leading-relaxed mb-6">
+        {/* Description: Light 300 */}
+        <p className="text-xs md:text-sm text-body-text font-body font-light leading-relaxed mb-6">
           {service.description}
         </p>
 
-        {/* Mini Bullet Features List */}
+        {/* Features lists */}
         <ul className="space-y-2 mb-2">
           {service.features.map((feat: string, fIdx: number) => (
-            <li key={fIdx} className="flex items-center text-xs text-white/70 font-mono">
-              <CheckCircle2 className="w-3.5 h-3.5 text-accent mr-2.5 shrink-0" />
+            <li key={fIdx} className="flex items-center text-xs text-white/70 font-mono uppercase tracking-wider">
+              <span className="w-1.5 h-1.5 bg-m-blue-light mr-2.5 shrink-0 rounded-none" />
               <span>{feat}</span>
             </li>
           ))}
@@ -75,18 +81,15 @@ export default function Services() {
   const ref = useRef(null);
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden">
-      {/* Background decoration blur */}
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px] pointer-events-none" />
-
+    <section id="services" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>
         
         {/* Section Header */}
-        <div className="text-left max-w-xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4 font-heading">
+        <div className="text-left max-w-xl mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-4 font-heading uppercase">
             OFFERED SERVICES
           </h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-m-blue-light via-m-blue-dark to-m-red" />
         </div>
 
         {/* Services Grid */}

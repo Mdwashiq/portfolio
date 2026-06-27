@@ -70,7 +70,7 @@ export default function CustomCursor() {
     <>
       {/* Central Cursor Point */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-accent rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 bg-m-red rounded-full pointer-events-none z-50 mix-blend-difference"
         style={{
           x: cursorX,
           y: cursorY,
@@ -81,30 +81,18 @@ export default function CustomCursor() {
       
       {/* Outer Ring Follower */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-primary pointer-events-none z-50 mix-blend-screen"
+        className="fixed top-0 left-0 rounded-full border border-white pointer-events-none z-50 mix-blend-difference"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          width: isHovered ? 48 : 24,
-          height: isHovered ? 48 : 24,
-          backgroundColor: isHovered ? 'rgba(37, 99, 235, 0.15)' : 'rgba(37, 99, 235, 0)',
-          borderColor: isHovered ? '#06B6D4' : '#2563EB',
+          width: isHovered ? 40 : 20,
+          height: isHovered ? 40 : 20,
+          backgroundColor: isHovered ? 'rgba(226, 39, 24, 0.2)' : 'rgba(255, 255, 255, 0)',
+          borderColor: isHovered ? '#e22718' : '#ffffff',
         }}
         transition={{ type: 'spring', stiffness: 500, damping: 28 }}
-      />
-      
-      {/* Mouse Glow Background Mesh */}
-      <motion.div
-        className="fixed top-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none z-0 opacity-40"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%',
-          background: 'radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(37, 99, 235, 0.03) 50%, transparent 70%)',
-        }}
       />
     </>
   );

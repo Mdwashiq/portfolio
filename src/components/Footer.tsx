@@ -1,4 +1,4 @@
-import { ArrowUp, Heart } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -8,30 +8,35 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 bg-bg-dark/80 backdrop-blur-md relative z-10 py-12">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-hairline bg-black relative z-10 py-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
         
-        {/* Left Side: Brand and Status */}
-        <div className="flex flex-col items-center md:items-start space-y-2 text-center md:text-left">
-          <div className="flex items-center space-x-2 font-heading font-bold text-lg">
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Mohamed Washiq
+        {/* Left: Brand logo & Status indicator */}
+        <div className="flex flex-col items-center md:items-start space-y-3 text-center md:text-left">
+          <div className="flex items-center space-x-3 font-heading font-bold text-lg">
+            <div className="w-1.5 h-5 flex flex-col">
+              <div className="h-1/3 bg-m-blue-light" />
+              <div className="h-1/3 bg-m-blue-dark" />
+              <div className="h-1/3 bg-m-red" />
+            </div>
+            <span className="text-white tracking-[1px] uppercase">
+              MOHAMED WASHIQ
             </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
           </div>
           
-          {/* Pulsing Status indicator */}
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/5 py-1 px-3 rounded-full text-[10px] font-mono text-white/60">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span>AVAILABLE FOR SELECT OFFERS</span>
+          <div className="inline-flex items-center space-x-2 bg-surface-soft border border-hairline py-1 px-3 rounded-none text-[9px] font-mono font-bold tracking-widest text-white/60">
+            <span className="w-1.5 h-1.5 rounded-none bg-m-red animate-pulse" />
+            <span>AVAILABLE FOR TECHNICAL OFFERS</span>
           </div>
         </div>
 
         {/* Center: Social Links */}
         <div className="flex items-center space-x-4">
           <a
-            href="#"
-            className="p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-white/50 hover:text-white transition-all cursor-none"
+            href="https://www.linkedin.com/in/-washiq7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
             aria-label="LinkedIn"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -42,7 +47,7 @@ export default function Footer() {
           </a>
           <a
             href="#"
-            className="p-2.5 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-white/50 hover:text-white transition-all cursor-none"
+            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
             aria-label="GitHub"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -52,20 +57,19 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Right Side: Back to top & Copyright */}
-        <div className="flex flex-col items-center md:items-end space-y-2">
+        {/* Right: Circular scroll-top control & Disclaimer */}
+        <div className="flex flex-col items-center md:items-end space-y-3">
+          {/* Scroll-top is a circular button-icon (48x48px) as per guidelines */}
           <button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 text-accent transition-all cursor-none group"
+            className="w-12 h-12 rounded-full bg-surface-card border border-hairline hover:bg-white hover:text-black text-white flex items-center justify-center transition-all cursor-none group"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
           </button>
           
-          <div className="text-[10px] font-mono text-white/40 flex items-center mt-1">
-            <span>© {currentYear} MW. Built with</span>
-            <Heart className="w-3 h-3 text-rose-500 mx-1 fill-rose-500" />
-            <span>in India.</span>
+          <div className="text-[10px] font-mono text-muted-text flex items-center mt-1">
+            <span>© {currentYear} MW. PROTOTYPED UNDER BMW M SPECIFICATION.</span>
           </div>
         </div>
 
