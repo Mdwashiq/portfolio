@@ -66,25 +66,24 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.3, delay: index * 0.04 }}
-      className="p-5 bg-black border border-hairline rounded-none relative group overflow-hidden flex flex-col justify-between"
+      className="p-5 bg-white border border-hairline rounded-none relative group overflow-hidden flex flex-col justify-between"
     >
-      {/* Dynamic mouse glow hover effect (very faint white) */}
+      {/* Subtle blue mouse glow hover */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300 z-0"
         style={{
-          background: `radial-gradient(150px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.4), transparent 50%)`
+          background: `radial-gradient(150px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(28, 105, 212, 0.3), transparent 50%)`
         }}
       />
 
       <div className="flex items-center space-x-3.5 z-10 relative">
         <div 
-          className="p-2 bg-surface-soft border border-hairline group-hover:scale-105 transition-transform duration-300"
-          style={{ color: skill.color || '#ffffff' }}
+          className="p-2 bg-surface-soft border border-hairline group-hover:scale-105 transition-transform duration-300 text-primary"
         >
           <IconComponent className="w-5 h-5" />
         </div>
         <div className="text-left">
-          <div className="text-sm font-bold text-white font-heading uppercase tracking-tight">
+          <div className="text-sm font-bold text-ink font-heading uppercase tracking-tight">
             {skill.name}
           </div>
           <div className="text-[9px] font-mono tracking-widest text-muted-text mt-0.5">
@@ -93,7 +92,7 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
         </div>
       </div>
 
-      {/* Progress Bar: Flat M Tricolor track */}
+      {/* Progress Bar: BMW Blue on soft grey track */}
       <div className="mt-5 w-full z-10 relative">
         <div className="flex justify-between items-center text-[9px] font-mono text-muted-text mb-1 uppercase tracking-widest">
           <span>MODULE CAPABILITY</span>
@@ -105,7 +104,7 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
             whileInView={{ width: `${skill.level}%` }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
-            className="h-full rounded-none bg-gradient-to-r from-m-blue-light via-m-blue-dark to-m-red"
+            className="h-full rounded-none bg-primary"
           />
         </div>
       </div>
@@ -118,15 +117,15 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
+    <section id="skills" className="py-20 relative overflow-hidden bg-canvas border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>
         
         {/* Section Header */}
-        <div className="text-left max-w-xl mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-4 font-heading uppercase">
+        <div className="text-left max-w-xl mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4 font-heading uppercase">
             TECHNICAL CAPABILITIES
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-m-blue-light via-m-m-blue-dark to-m-red" />
+          <div className="w-16 h-1 bg-primary" />
         </div>
 
         {/* Categories Grid */}
@@ -137,14 +136,14 @@ export default function Skills() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: catIdx * 0.08 }}
-              className="p-6 bg-surface-soft border border-hairline rounded-none flex flex-col space-y-6 shadow-xl relative"
+              className="p-6 bg-surface-card border border-hairline rounded-none flex flex-col space-y-6 relative"
             >
               {/* Category Header */}
               <div className="flex items-center justify-between border-b border-hairline pb-4">
-                <h3 className="text-base font-bold text-white font-heading tracking-tight uppercase">
+                <h3 className="text-sm font-bold text-ink font-heading tracking-tight uppercase">
                   {category.title}
                 </h3>
-                <span className="text-[9px] font-mono text-m-red tracking-widest">
+                <span className="text-[9px] font-mono text-primary font-bold tracking-widest">
                   {category.skills.length} MODULES
                 </span>
               </div>

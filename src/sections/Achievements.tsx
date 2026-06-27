@@ -66,15 +66,15 @@ export default function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-24 relative overflow-hidden bg-black border-t border-hairline" ref={containerRef}>
+    <section id="achievements" className="py-20 relative overflow-hidden bg-canvas border-t border-hairline" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
-        {/* 1. METRICS & COUNTERS (spec-cell grid) */}
+        {/* 1. METRICS & COUNTERS */}
         <div className="text-left max-w-xl mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-4 font-heading uppercase">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4 font-heading uppercase">
             IMPACT & METRICS
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-m-blue-light via-m-blue-dark to-m-red" />
+          <div className="w-16 h-1 bg-primary" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-24">
@@ -86,15 +86,15 @@ export default function Achievements() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="p-6 bg-surface-soft border border-hairline rounded-none flex flex-col justify-between text-left"
+                className="p-6 bg-surface-card border border-hairline rounded-none flex flex-col justify-between text-left"
               >
-                <div className="p-2 bg-black border border-hairline text-m-red w-fit mb-4">
+                <div className="p-2 bg-white border border-hairline text-primary w-fit mb-4">
                   <IconComp className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-3xl md:text-4xl font-extrabold text-white font-heading tracking-tight leading-none">
+                  <div className="text-2xl md:text-3xl font-extrabold text-ink font-heading tracking-tight leading-none">
                     {counters[index]}
-                    <span className="text-m-red">{item.suffix}</span>
+                    <span className="text-primary">{item.suffix}</span>
                   </div>
                   <div className="text-[10px] font-bold tracking-[1.5px] text-muted-text uppercase font-mono mt-1">
                     {item.label}
@@ -113,8 +113,8 @@ export default function Achievements() {
           
           {/* Left Panel: Education Timeline */}
           <div className="text-left">
-            <h3 className="text-lg font-bold text-white mb-8 font-heading tracking-tight uppercase flex items-center space-x-2">
-              <GraduationCap className="w-5 h-5 text-m-blue-light" />
+            <h3 className="text-base font-bold text-ink mb-8 font-heading tracking-tight uppercase flex items-center space-x-2">
+              <GraduationCap className="w-5 h-5 text-primary" />
               <span>EDUCATION HISTORY</span>
             </h3>
 
@@ -129,20 +129,20 @@ export default function Achievements() {
                   className="relative pl-6 group"
                 >
                   {/* Square bullet */}
-                  <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-black border border-m-red group-hover:bg-m-red transition-all duration-300" />
+                  <div className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 bg-white border border-primary group-hover:bg-primary transition-all duration-300" />
                   
-                  <div className="flex items-center space-x-2 text-[9px] font-mono font-bold text-m-blue-light mb-2 uppercase tracking-widest">
+                  <div className="flex items-center space-x-2 text-[9px] font-mono font-bold text-primary mb-2 uppercase tracking-widest">
                     <Calendar className="w-3.5 h-3.5" />
                     <span>{edu.duration}</span>
                     {edu.score && (
                       <>
                         <span>·</span>
-                        <span className="text-m-red">{edu.score}</span>
+                        <span className="text-ink">{edu.score}</span>
                       </>
                     )}
                   </div>
                   
-                  <h4 className="text-base font-bold text-white font-heading mt-0.5 group-hover:text-m-red transition-colors uppercase tracking-tight">
+                  <h4 className="text-sm font-bold text-ink font-heading mt-0.5 group-hover:text-primary transition-colors uppercase tracking-tight">
                     {edu.degree}
                   </h4>
                   
@@ -150,7 +150,7 @@ export default function Achievements() {
                     {edu.institution}
                   </p>
                   
-                  <p className="text-sm text-body-text mt-2.5 font-body font-light leading-relaxed">
+                  <p className="text-xs md:text-sm text-body-text mt-2.5 font-body font-light leading-relaxed">
                     {edu.description}
                   </p>
                 </motion.div>
@@ -160,8 +160,8 @@ export default function Achievements() {
 
           {/* Right Panel: Certifications Spec Cells */}
           <div className="text-left">
-            <h3 className="text-lg font-bold text-white mb-8 font-heading tracking-tight uppercase flex items-center space-x-2">
-              <ShieldCheck className="w-5 h-5 text-m-red" />
+            <h3 className="text-base font-bold text-ink mb-8 font-heading tracking-tight uppercase flex items-center space-x-2">
+              <ShieldCheck className="w-5 h-5 text-primary" />
               <span>CERTIFICATIONS</span>
             </h3>
 
@@ -173,23 +173,22 @@ export default function Achievements() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  className="p-5 bg-surface-soft border border-hairline rounded-none hover:border-white/20 transition-all duration-300 flex flex-col justify-between group"
+                  className="p-5 bg-surface-card border border-hairline rounded-none hover:border-hairline-strong transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     <span className="text-[9px] font-mono font-bold tracking-widest text-muted-text uppercase">{cert.issuer}</span>
-                    <h4 className="text-sm font-bold text-white font-heading mt-1.5 group-hover:text-m-red transition-colors leading-snug uppercase tracking-tight">
+                    <h4 className="text-sm font-bold text-ink font-heading mt-1.5 group-hover:text-primary transition-colors leading-snug uppercase tracking-tight">
                       {cert.title}
                     </h4>
                   </div>
                   
-                  <div className="flex justify-between items-center mt-5 pt-3 border-t border-hairline-strong">
+                  <div className="flex justify-between items-center mt-5 pt-3 border-t border-hairline">
                     <span className="text-[9px] font-mono text-muted-text">{cert.date}</span>
                     <a 
                       href={cert.credentialUrl} 
-                      className="text-[9px] font-mono font-bold text-m-blue-light hover:text-white inline-flex items-center space-x-0.5 cursor-none uppercase tracking-widest"
+                      className="text-[9px] font-mono font-bold text-primary hover:text-primary-active inline-flex items-center space-x-0.5 cursor-none uppercase tracking-widest"
                     >
-                      <span>VERIFY</span>
-                      <ChevronRight className="w-3 h-3" />
+                      <span>VERIFY ›</span>
                     </a>
                   </div>
                 </motion.div>
@@ -201,16 +200,16 @@ export default function Achievements() {
 
         {/* 3. TESTIMONIALS SLIDER */}
         <div className="text-left max-w-xl mb-12">
-          <h3 className="text-lg font-bold text-white font-heading tracking-tight uppercase flex items-center space-x-2">
-            <Quote className="w-5 h-5 text-m-blue-light" />
+          <h3 className="text-base font-bold text-ink font-heading tracking-tight uppercase flex items-center space-x-2">
+            <Quote className="w-5 h-5 text-primary" />
             <span>TESTIMONIALS</span>
           </h3>
         </div>
 
         <div className="max-w-4xl mx-auto relative px-4">
-          <div className="relative bg-surface-soft border border-hairline rounded-none p-8 md:p-12 shadow-2xl overflow-hidden min-h-[250px] flex flex-col justify-between">
+          <div className="relative bg-surface-card border border-hairline rounded-none p-8 md:p-12 shadow-sm overflow-hidden min-h-[250px] flex flex-col justify-between">
             {/* Quote decoration */}
-            <div className="absolute right-8 top-6 text-white/5 pointer-events-none select-none">
+            <div className="absolute right-8 top-6 text-black/5 pointer-events-none select-none">
               <Quote className="w-24 h-24 stroke-[1px]" />
             </div>
 
@@ -229,20 +228,20 @@ export default function Achievements() {
                 </p>
 
                 {/* Reviewer details: 0px avatar frame */}
-                <div className="flex items-center space-x-4 pt-4 border-t border-hairline-strong">
+                <div className="flex items-center space-x-4 pt-4 border-t border-hairline">
                   {testimonialsData[currentTestimonial].imageUrl && (
                     <img 
                       src={testimonialsData[currentTestimonial].imageUrl} 
                       alt={testimonialsData[currentTestimonial].name}
-                      className="w-12 h-12 rounded-none border border-hairline object-cover filter grayscale contrast-125 brightness-90"
+                      className="w-12 h-12 rounded-none border border-hairline object-cover filter grayscale contrast-110 brightness-95"
                     />
                   )}
                   <div>
-                    <div className="font-bold text-white text-sm md:text-base font-heading uppercase tracking-tight">
+                    <div className="font-bold text-ink text-sm md:text-base font-heading uppercase tracking-tight">
                       {testimonialsData[currentTestimonial].name}
                     </div>
                     <div className="text-[10px] text-muted-text font-mono uppercase tracking-wider mt-0.5">
-                      {testimonialsData[currentTestimonial].role} at <span className="text-m-red">{testimonialsData[currentTestimonial].company}</span>
+                      {testimonialsData[currentTestimonial].role} at <span className="text-primary font-bold">{testimonialsData[currentTestimonial].company}</span>
                     </div>
                   </div>
                 </div>
@@ -257,9 +256,11 @@ export default function Achievements() {
                   <button
                     key={idx}
                     onClick={() => setCurrentTestimonial(idx)}
-                    className={`h-1 rounded-none transition-all duration-300 cursor-none ${
-                      currentTestimonial === idx ? 'w-6 bg-m-red' : 'w-2 bg-white/20'
-                    }`}
+                    className="h-1 rounded-none transition-all duration-300 cursor-none"
+                    style={{
+                      width: currentTestimonial === idx ? '24px' : '8px',
+                      backgroundColor: currentTestimonial === idx ? '#1c69d4' : '#cccccc'
+                    }}
                   />
                 ))}
               </div>
@@ -268,13 +269,13 @@ export default function Achievements() {
               <div className="flex space-x-2">
                 <button
                   onClick={handlePrevTestimonial}
-                  className="p-2.5 rounded-none bg-black border border-hairline hover:bg-white hover:text-black hover:border-white text-white transition-all cursor-none"
+                  className="w-10 h-10 rounded-full bg-white border border-hairline-strong hover:bg-primary hover:text-white hover:border-primary text-ink flex items-center justify-center transition-all cursor-none"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
                 <button
                   onClick={handleNextTestimonial}
-                  className="p-2.5 rounded-none bg-black border border-hairline hover:bg-white hover:text-black hover:border-white text-white transition-all cursor-none"
+                  className="w-10 h-10 rounded-full bg-white border border-hairline-strong hover:bg-primary hover:text-white hover:border-primary text-ink flex items-center justify-center transition-all cursor-none"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>

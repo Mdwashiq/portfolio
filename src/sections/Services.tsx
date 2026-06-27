@@ -39,22 +39,23 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.4, delay: index * 0.04 }}
-      className="p-8 bg-surface-soft border border-hairline rounded-none hover:border-white/20 transition-all duration-300 relative group flex flex-col justify-between shadow-xl"
+      className="p-8 bg-surface-card border border-hairline rounded-none hover:border-hairline-strong transition-all duration-300 relative group flex flex-col justify-between"
     >
+      {/* Subtle blue mouse glow hover */}
       <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(150px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255, 255, 255, 0.4), transparent 50%)`
+          background: `radial-gradient(150px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(28, 105, 212, 0.2), transparent 50%)`
         }}
       />
 
       <div className="z-10 text-left">
         {/* Square Icon frame */}
-        <div className="w-12 h-12 bg-black border border-hairline text-m-red flex items-center justify-center group-hover:scale-105 transition-all duration-300 mb-6 rounded-none">
-          <IconComponent className="w-5 h-5 text-m-red" />
+        <div className="w-12 h-12 bg-white border border-hairline text-primary flex items-center justify-center group-hover:scale-105 transition-all duration-300 mb-6 rounded-none">
+          <IconComponent className="w-5 h-5 text-primary" />
         </div>
 
-        {/* Title: uppercase, tight spacing */}
-        <h3 className="text-lg font-bold text-white font-heading mb-3 group-hover:text-m-red transition-colors uppercase tracking-tight">
+        {/* Title */}
+        <h3 className="text-lg font-bold text-ink font-heading mb-3 group-hover:text-primary transition-colors uppercase tracking-tight">
           {service.title}
         </h3>
 
@@ -66,8 +67,8 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
         {/* Features lists */}
         <ul className="space-y-2 mb-2">
           {service.features.map((feat: string, fIdx: number) => (
-            <li key={fIdx} className="flex items-center text-xs text-white/70 font-mono uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 bg-m-blue-light mr-2.5 shrink-0 rounded-none" />
+            <li key={fIdx} className="flex items-center text-xs text-body-text font-mono uppercase tracking-wider">
+              <span className="w-1.5 h-1.5 bg-primary mr-2.5 shrink-0 rounded-none" />
               <span>{feat}</span>
             </li>
           ))}
@@ -81,15 +82,15 @@ export default function Services() {
   const ref = useRef(null);
 
   return (
-    <section id="services" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
+    <section id="services" className="py-20 relative overflow-hidden bg-canvas border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>
         
         {/* Section Header */}
-        <div className="text-left max-w-xl mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-4 font-heading uppercase">
+        <div className="text-left max-w-xl mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4 font-heading uppercase">
             OFFERED SERVICES
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-m-blue-light via-m-blue-dark to-m-red" />
+          <div className="w-16 h-1 bg-primary" />
         </div>
 
         {/* Services Grid */}

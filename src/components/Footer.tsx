@@ -8,25 +8,21 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-hairline bg-black relative z-10 py-16">
+    <footer className="border-t border-hairline bg-surface-soft relative z-10 py-16 text-body-text">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
         
         {/* Left: Brand logo & Status indicator */}
         <div className="flex flex-col items-center md:items-start space-y-3 text-center md:text-left">
           <div className="flex items-center space-x-3 font-heading font-bold text-lg">
-            <div className="w-1.5 h-5 flex flex-col">
-              <div className="h-1/3 bg-m-blue-light" />
-              <div className="h-1/3 bg-m-blue-dark" />
-              <div className="h-1/3 bg-m-red" />
-            </div>
-            <span className="text-white tracking-[1px] uppercase">
+            <div className="w-1.5 h-5 bg-primary" />
+            <span className="text-ink tracking-[0.3px] uppercase">
               MOHAMED WASHIQ
             </span>
           </div>
           
-          <div className="inline-flex items-center space-x-2 bg-surface-soft border border-hairline py-1 px-3 rounded-none text-[9px] font-mono font-bold tracking-widest text-white/60">
-            <span className="w-1.5 h-1.5 rounded-none bg-m-red animate-pulse" />
-            <span>AVAILABLE FOR TECHNICAL OFFERS</span>
+          <div className="inline-flex items-center space-x-2 bg-white border border-hairline py-1 px-3 rounded-none text-[9px] font-mono font-bold tracking-widest text-muted-text">
+            <span className="w-1.5 h-1.5 rounded-none bg-primary animate-pulse" />
+            <span>AVAILABLE FOR SELECT OFFERS</span>
           </div>
         </div>
 
@@ -36,7 +32,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/-washiq7"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
+            className="p-3 bg-white border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text hover:text-white transition-all cursor-none rounded-none"
             aria-label="LinkedIn"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -46,19 +42,8 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://wa.me/919789783693"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
-            aria-label="WhatsApp"
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-            </svg>
-          </a>
-          <a
             href="#"
-            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
+            className="p-3 bg-white border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text hover:text-white transition-all cursor-none rounded-none"
             aria-label="GitHub"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -66,21 +51,32 @@ export default function Footer() {
               <path d="M9 18c-4.51 2-5-2-7-2" />
             </svg>
           </a>
+          <a
+            href="https://wa.me/919789783693"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-3 bg-white border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text hover:text-white transition-all cursor-none rounded-none"
+            aria-label="WhatsApp"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </a>
         </div>
 
         {/* Right: Circular scroll-top control & Disclaimer */}
         <div className="flex flex-col items-center md:items-end space-y-3">
-          {/* Scroll-top is a circular button-icon (48x48px) as per guidelines */}
+          {/* Scroll-top is circular button-icon (48x48px) as per guidelines */}
           <button
             onClick={scrollToTop}
-            className="w-12 h-12 rounded-full bg-surface-card border border-hairline hover:bg-white hover:text-black text-white flex items-center justify-center transition-all cursor-none group"
+            className="w-12 h-12 rounded-full bg-surface-card border border-hairline hover:bg-ink hover:text-white text-ink flex items-center justify-center transition-all cursor-none group"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
           </button>
           
           <div className="text-[10px] font-mono text-muted-text flex items-center mt-1">
-            <span>© {currentYear} MW. PROTOTYPED UNDER BMW M SPECIFICATION.</span>
+            <span>© {currentYear} MW. PROTOTYPED UNDER BMW CORPORATE SPECIFICATION.</span>
           </div>
         </div>
 
