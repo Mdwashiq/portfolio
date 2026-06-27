@@ -137,7 +137,9 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/Mdwashiq"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-3.5 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/70 hover:text-white transition-all cursor-none rounded-none"
                   aria-label="GitHub Profile"
                 >
