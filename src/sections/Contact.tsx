@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { saveContactMessage } from '../utils/supabaseClient';
 
@@ -88,8 +88,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">EMAIL ADDRESS</div>
-                  <a href="mailto:wahiqmohamed@gmail.com" className="text-sm font-bold text-white hover:text-m-red transition-colors font-heading cursor-none uppercase tracking-tight">
-                    wahiqmohamed@gmail.com
+                  <a href="mailto:mohammedwashiq786@gmail.com" className="text-sm font-bold text-white hover:text-m-red transition-colors font-heading cursor-none uppercase tracking-tight">
+                    mohammedwashiq786@gmail.com
                   </a>
                 </div>
               </div>
@@ -103,6 +103,18 @@ export default function Contact() {
                   <div className="text-sm font-bold text-white font-heading uppercase tracking-tight">
                     Tamil Nadu, India
                   </div>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="p-3.5 bg-surface-soft border border-hairline text-m-red rounded-none">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">WHATSAPP CHAT</div>
+                  <a href="https://wa.me/919789783693" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-white hover:text-m-red transition-colors font-heading cursor-none uppercase tracking-tight">
+                    +91 97897 83693
+                  </a>
                 </div>
               </div>
             </div>
