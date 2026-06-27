@@ -40,12 +40,12 @@ export default function Contact() {
       setStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       
-      // Fire BMW Corporate Blue confetti explosion
+      // Fire M-tricolor confetti explosion
       confetti({
         particleCount: 120,
         spread: 80,
         origin: { y: 0.6 },
-        colors: ['#1c69d4', '#0653b6', '#7faefc', '#ffffff'],
+        colors: ['#0066b1', '#1c69d4', '#e22718', '#ffffff'],
       });
     } catch (err: any) {
       console.error(err);
@@ -55,15 +55,15 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 relative overflow-hidden bg-canvas border-t border-hairline">
+    <section id="contact" className="py-24 relative overflow-hidden bg-black border-t border-hairline">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="text-left max-w-xl mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-ink mb-4 font-heading uppercase">
+        <div className="text-left max-w-xl mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-4 font-heading uppercase">
             GET IN TOUCH
           </h2>
-          <div className="w-16 h-1 bg-primary" />
+          <div className="w-16 h-1 bg-gradient-to-r from-m-blue-light via-m-blue-dark to-m-red" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -71,48 +71,48 @@ export default function Contact() {
           {/* Left Panel: Contact Info */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-12 text-left">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-ink font-heading leading-snug uppercase tracking-tight">
-                LET'S DISCOVER <br />
-                <span className="text-primary">NEW OPPORTUNITIES</span> TOGETHER.
+              <h3 className="text-2xl font-bold text-white font-heading leading-snug uppercase tracking-tight">
+                LET'S BUILD <br />
+                <span className="text-m-red">SOMETHING SIGNIFICANT</span> TOGETHER.
               </h3>
               <p className="text-xs md:text-sm text-body-text font-body font-light leading-relaxed">
-                Whether you need a custom AI agent system, an autonomous robotic deployment, a scalable SaaS architecture, or complete automation solutions—I am available to turn your requirements into production-ready platforms.
+                Whether you need an autonomous robotic integration, a custom AI agent workflow, a modern SaaS application, or database consulting—I'm here to help turn your ideas into functional products.
               </p>
             </div>
 
             {/* Direct Channels */}
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="p-3.5 bg-surface-soft border border-hairline text-primary rounded-none">
+                <div className="p-3.5 bg-surface-soft border border-hairline text-m-red rounded-none">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">EMAIL ADDRESS</div>
-                  <a href="mailto:mohammedwashiq786@gmail.com" className="text-sm font-bold text-ink hover:text-primary transition-colors font-heading cursor-none uppercase tracking-tight">
+                  <a href="mailto:mohammedwashiq786@gmail.com" className="text-sm font-bold text-white hover:text-m-red transition-colors font-heading cursor-none uppercase tracking-tight">
                     mohammedwashiq786@gmail.com
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="p-3.5 bg-surface-soft border border-hairline text-primary rounded-none">
+                <div className="p-3.5 bg-surface-soft border border-hairline text-m-blue-light rounded-none">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">LOCATION</div>
-                  <div className="text-sm font-bold text-ink font-heading uppercase tracking-tight">
+                  <div className="text-sm font-bold text-white font-heading uppercase tracking-tight">
                     Tamil Nadu, India
                   </div>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
-                <div className="p-3.5 bg-surface-soft border border-hairline text-primary rounded-none">
+                <div className="p-3.5 bg-surface-soft border border-hairline text-m-red rounded-none">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-[10px] font-mono font-bold text-muted-text uppercase tracking-widest">WHATSAPP CHAT</div>
-                  <a href="https://wa.me/919789783693" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-ink hover:text-primary transition-colors font-heading cursor-none uppercase tracking-tight">
+                  <a href="https://wa.me/919789783693" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-white hover:text-m-red transition-colors font-heading cursor-none uppercase tracking-tight">
                     +91 97897 83693
                   </a>
                 </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/-washiq7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 bg-surface-soft border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text transition-all cursor-none rounded-none"
+                  className="p-3.5 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/70 hover:text-white transition-all cursor-none rounded-none"
                   aria-label="LinkedIn Profile"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -138,7 +138,7 @@ export default function Contact() {
                 </a>
                 <a
                   href="#"
-                  className="p-3.5 bg-surface-soft border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text transition-all cursor-none rounded-none"
+                  className="p-3.5 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/70 hover:text-white transition-all cursor-none rounded-none"
                   aria-label="GitHub Profile"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -152,7 +152,7 @@ export default function Contact() {
 
           {/* Right Panel: Form */}
           <div className="lg:col-span-7">
-            <div className="relative bg-surface-card border border-hairline rounded-none p-8 md:p-10 shadow-sm overflow-hidden">
+            <div className="relative bg-surface-soft border border-hairline rounded-none p-8 md:p-10 shadow-2xl overflow-hidden">
               
               <AnimatePresence mode="wait">
                 {status === 'success' ? (
@@ -167,23 +167,23 @@ export default function Contact() {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', stiffness: 200, damping: 15, delay: 0.1 }}
-                      className="p-4 bg-white border border-primary text-primary rounded-none"
+                      className="p-4 bg-black border border-m-red text-m-red rounded-none"
                     >
                       <CheckCircle2 className="w-12 h-12" />
                     </motion.div>
                     
                     <div className="space-y-2">
-                      <h3 className="text-xl font-bold text-ink font-heading uppercase tracking-tight">
+                      <h3 className="text-xl font-bold text-white font-heading uppercase tracking-tight">
                         MESSAGE SUBMITTED.
                       </h3>
                       <p className="text-xs text-body-text max-w-sm mx-auto font-body font-light leading-relaxed">
-                        Telemetry parameters recorded. Your inquiry profile has been queued successfully. We will follow up within 24 hours.
+                        Inquiry persisted successfully. System queue will process this telemetry profile. Expect direct feedback within 24 hours.
                       </p>
                     </div>
 
                     <button
                       onClick={() => setStatus('idle')}
-                      className="px-6 py-3 bg-white border border-hairline-strong hover:border-ink hover:text-ink text-xs font-bold tracking-widest uppercase transition-all cursor-none rounded-none"
+                      className="px-6 py-3 bg-black border border-white hover:bg-white hover:text-black text-xs font-bold tracking-widest uppercase transition-all cursor-none rounded-none"
                     >
                       SEND ANOTHER TRANSMISSION
                     </button>
@@ -197,7 +197,7 @@ export default function Contact() {
                     exit={{ opacity: 0 }}
                   >
                     {status === 'error' && (
-                      <div className="p-4 bg-white border border-primary text-primary text-xs flex items-center space-x-3.5 rounded-none font-mono">
+                      <div className="p-4 bg-black border border-m-red text-m-red text-xs flex items-center space-x-3.5 rounded-none font-mono">
                         <AlertCircle className="w-5 h-5 shrink-0" />
                         <span>{errorMessage}</span>
                       </div>
@@ -205,8 +205,8 @@ export default function Contact() {
 
                     {/* Name Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="name" className="text-[10px] font-mono font-bold tracking-widest text-muted-text">
-                        FULL NAME <span className="text-primary">*</span>
+                      <label htmlFor="name" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
+                        FULL NAME <span className="text-m-red">*</span>
                       </label>
                       <input
                         type="text"
@@ -216,14 +216,14 @@ export default function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full h-12 px-4 bg-white border border-hairline focus:border-ink text-sm text-ink placeholder-ink/20 outline-none transition-all cursor-none font-body font-light rounded-none"
+                        className="w-full h-12 px-4 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
                     {/* Email Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="email" className="text-[10px] font-mono font-bold tracking-widest text-muted-text">
-                        EMAIL ADDRESS <span className="text-primary">*</span>
+                      <label htmlFor="email" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
+                        EMAIL ADDRESS <span className="text-m-red">*</span>
                       </label>
                       <input
                         type="email"
@@ -233,13 +233,13 @@ export default function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="johndoe@example.com"
-                        className="w-full h-12 px-4 bg-white border border-hairline focus:border-ink text-sm text-ink placeholder-ink/20 outline-none transition-all cursor-none font-body font-light rounded-none"
+                        className="w-full h-12 px-4 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
                     {/* Subject Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="subject" className="text-[10px] font-mono font-bold tracking-widest text-muted-text">
+                      <label htmlFor="subject" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
                         SUBJECT
                       </label>
                       <input
@@ -249,14 +249,14 @@ export default function Contact() {
                         value={formData.subject}
                         onChange={handleChange}
                         placeholder="System Collaboration"
-                        className="w-full h-12 px-4 bg-white border border-hairline focus:border-ink text-sm text-ink placeholder-ink/20 outline-none transition-all cursor-none font-body font-light rounded-none"
+                        className="w-full h-12 px-4 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
                     {/* Message Input */}
                     <div className="flex flex-col space-y-2">
-                      <label htmlFor="message" className="text-[10px] font-mono font-bold tracking-widest text-muted-text">
-                        TRANSMISSION FEEDBACK <span className="text-primary">*</span>
+                      <label htmlFor="message" className="text-[10px] font-mono font-bold tracking-widest text-white/40">
+                        TRANSMISSION FEEDBACK <span className="text-m-red">*</span>
                       </label>
                       <textarea
                         id="message"
@@ -265,8 +265,8 @@ export default function Contact() {
                         rows={4}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Specify telemetry parameters, project specifications, or collaboration goals..."
-                        className="w-full px-4 py-3 bg-white border border-hairline focus:border-ink text-sm text-ink placeholder-ink/20 outline-none transition-all resize-none cursor-none font-body font-light rounded-none"
+                        placeholder="Specify telemetry parameters, goals, or scheduling details..."
+                        className="w-full px-4 py-3 bg-black border border-hairline focus:border-white text-sm text-white placeholder-white/20 outline-none transition-all resize-none cursor-none font-body font-light rounded-none"
                       />
                     </div>
 
@@ -274,7 +274,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={status === 'submitting'}
-                      className="bmw-btn-primary w-full py-4 tracking-[1px] cursor-none disabled:opacity-50"
+                      className="bmw-btn-primary w-full py-4 tracking-[2px] cursor-none disabled:opacity-50"
                     >
                       {status === 'submitting' ? (
                         <>

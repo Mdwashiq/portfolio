@@ -3,26 +3,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1c69d4;
-  --color-primary-active: #0653b6;
+  --color-primary: #ffffff;
   
-  --color-canvas: #ffffff;
-  --color-surface-soft: #f7f7f7;
-  --color-surface-card: #fafafa;
-  --color-surface-strong: #ebebeb;
-  --color-surface-dark: #1a2129;
-  --color-surface-dark-elevated: #262e38;
+  --color-canvas: #000000;
+  --color-surface-soft: #0d0d0d;
+  --color-surface-card: #1a1a1a;
+  --color-surface-elevated: #262626;
+  --color-carbon-gray: #2b2b2b;
   
-  --color-hairline: #e6e6e6;
-  --color-hairline-strong: #cccccc;
+  --color-hairline: #3c3c3c;
+  --color-hairline-strong: #262626;
   
-  --color-ink: #262626;
-  --color-body-text: #3c3c3c;
-  --color-body-strong: #1a1a1a;
-  --color-muted-text: #6b6b6b;
-  --color-muted-soft: #9a9a9a;
+  --color-body-text: #bbbbbb;
+  --color-body-strong: #e6e6e6;
+  --color-muted-text: #7e7e7e;
   
-  --color-on-primary: #ffffff;
   --color-on-dark: #ffffff;
   --color-on-dark-soft: #bbbbbb;
 
@@ -34,28 +29,28 @@
   --font-body: "Inter", sans-serif;
 }
 
-/* Custom Scrollbar (BMW Corporate Light theme) */
+/* Custom Scrollbar (BMW M dark theme) */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cccccc;
+  background: #262626;
   border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9a9a9a;
+  background: #3c3c3c;
 }
 
 /* Base Styles */
 body {
-  background-color: #ffffff;
-  color: #3c3c3c;
+  background-color: #000000;
+  color: #bbbbbb;
   font-family: 'Inter', sans-serif;
   font-weight: 300; /* Light body copy default */
   overflow-x: hidden;
@@ -66,62 +61,56 @@ body {
 
 /* Custom Selection */
 ::selection {
-  background-color: #1c69d4;
+  background-color: #e22718;
   color: #ffffff;
 }
 
 /* Global Typography Overrides */
 h1, h2, h3, h4, h5, h6 {
-  color: #262626;
+  color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0em; /* default tracking */
+  letter-spacing: -0.5px; /* tight display tracking */
 }
 
-/* BMW Corporate Button Layouts */
+/* M-stripe gradient */
+.m-stripe {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    #0066b1 0%,
+    #0066b1 33.3%,
+    #1c69d4 33.3%,
+    #1c69d4 66.6%,
+    #e22718 66.6%,
+    #e22718 100%
+  );
+}
+
+/* BMW M Button Layouts */
 .bmw-btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #1c69d4;
-  color: #ffffff;
-  border: none;
-  border-radius: 0px; /* rounded.none */
-  padding: 14px 32px;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: background-color 0.2s ease;
-}
-
-.bmw-btn-primary:hover {
-  background-color: #0653b6;
-}
-
-.bmw-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   background-color: #ffffff;
-  color: #262626;
-  border: 1px solid #cccccc;
+  color: #000000;
+  border: 1px solid #ffffff;
   border-radius: 0px;
-  padding: 14px 32px;
+  padding: 16px 32px;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px; /* machined precision */
   transition: all 0.2s ease;
 }
 
-.bmw-btn-secondary:hover {
-  background-color: #fafafa;
-  border-color: #262626;
+.bmw-btn-primary:hover {
+  background-color: transparent;
+  color: #ffffff;
 }
 
-.bmw-btn-secondary-on-dark {
+.bmw-btn-outline {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -129,26 +118,27 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   border: 1px solid #ffffff;
   border-radius: 0px;
-  padding: 14px 32px;
+  padding: 16px 32px;
   font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1.5px;
   transition: all 0.2s ease;
 }
 
-.bmw-btn-secondary-on-dark:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.bmw-btn-outline:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Card Plate Class */
 .bmw-card-plate {
-  background-color: #fafafa;
+  background-color: #1a1a1a;
   border-radius: 0px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #3c3c3c;
 }
 
 /* Section Spacing divider */
 .section-hairline {
-  border-top: 1px solid #ebebeb;
+  border-top: 1px solid #3c3c3c;
 }

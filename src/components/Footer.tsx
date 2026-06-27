@@ -8,21 +8,25 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-hairline bg-surface-soft relative z-10 py-16 text-body-text">
+    <footer className="border-t border-hairline bg-black relative z-10 py-16 text-body-text">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
         
         {/* Left: Brand logo & Status indicator */}
         <div className="flex flex-col items-center md:items-start space-y-3 text-center md:text-left">
           <div className="flex items-center space-x-3 font-heading font-bold text-lg">
-            <div className="w-1.5 h-5 bg-primary" />
-            <span className="text-ink tracking-[0.3px] uppercase">
+            <div className="w-1.5 h-5 flex flex-col">
+              <div className="h-1/3 bg-m-blue-light" />
+              <div className="h-1/3 bg-m-blue-dark" />
+              <div className="h-1/3 bg-m-red" />
+            </div>
+            <span className="text-white tracking-[0.5px] uppercase">
               MOHAMED WASHIQ
             </span>
           </div>
           
-          <div className="inline-flex items-center space-x-2 bg-white border border-hairline py-1 px-3 rounded-none text-[9px] font-mono font-bold tracking-widest text-muted-text">
-            <span className="w-1.5 h-1.5 rounded-none bg-primary animate-pulse" />
-            <span>AVAILABLE FOR SELECT OFFERS</span>
+          <div className="inline-flex items-center space-x-2 bg-surface-soft border border-hairline py-1 px-3 rounded-none text-[9px] font-mono font-bold tracking-widest text-muted-text">
+            <span className="w-1.5 h-1.5 rounded-none bg-m-red animate-pulse" />
+            <span>AVAILABLE FOR SELECT M PERFORMANCE OFFERS</span>
           </div>
         </div>
 
@@ -32,7 +36,7 @@ export default function Footer() {
             href="https://www.linkedin.com/in/-washiq7"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-white border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text hover:text-white transition-all cursor-none rounded-none"
+            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
             aria-label="LinkedIn"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,7 +47,7 @@ export default function Footer() {
           </a>
           <a
             href="#"
-            className="p-3 bg-white border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text hover:text-white transition-all cursor-none rounded-none"
+            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
             aria-label="GitHub"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -55,7 +59,7 @@ export default function Footer() {
             href="https://wa.me/919789783693"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-white border border-hairline hover:bg-primary hover:text-white hover:border-primary text-muted-text hover:text-white transition-all cursor-none rounded-none"
+            className="p-3 bg-surface-soft border border-hairline hover:bg-white hover:text-black hover:border-white text-white/50 hover:text-white transition-all cursor-none rounded-none"
             aria-label="WhatsApp"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -69,14 +73,14 @@ export default function Footer() {
           {/* Scroll-top is circular button-icon (48x48px) as per guidelines */}
           <button
             onClick={scrollToTop}
-            className="w-12 h-12 rounded-full bg-surface-card border border-hairline hover:bg-ink hover:text-white text-ink flex items-center justify-center transition-all cursor-none group"
+            className="w-12 h-12 rounded-full bg-surface-card border border-hairline hover:bg-white hover:text-black text-white flex items-center justify-center transition-all cursor-none group"
             aria-label="Scroll to top"
           >
             <ArrowUp className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
           </button>
           
           <div className="text-[10px] font-mono text-muted-text flex items-center mt-1">
-            <span>© {currentYear} MW. PROTOTYPED UNDER BMW CORPORATE SPECIFICATION.</span>
+            <span>© {currentYear} MW. PROTOTYPED UNDER BMW M SPECIFICATION.</span>
           </div>
         </div>
 

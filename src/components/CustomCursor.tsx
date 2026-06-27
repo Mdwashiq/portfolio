@@ -70,7 +70,7 @@ export default function CustomCursor() {
     <>
       {/* Central Cursor Point */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-50 mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 bg-m-red rounded-full pointer-events-none z-50 mix-blend-difference"
         style={{
           x: cursorX,
           y: cursorY,
@@ -89,8 +89,8 @@ export default function CustomCursor() {
           translateY: '-50%',
           width: isHovered ? 40 : 20,
           height: isHovered ? 40 : 20,
-          backgroundColor: isHovered ? 'rgba(28, 105, 212, 0.2)' : 'rgba(255, 255, 255, 0)',
-          borderColor: isHovered ? '#1c69d4' : '#ffffff',
+          backgroundColor: isHovered ? 'rgba(226, 39, 24, 0.2)' : 'rgba(255, 255, 255, 0)',
+          borderColor: isHovered ? '#e22718' : '#ffffff',
         }}
         transition={{ type: 'spring', stiffness: 500, damping: 28 }}
       />
