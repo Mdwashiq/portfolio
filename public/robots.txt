@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://washiq.dev/sitemap.xml
